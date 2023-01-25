@@ -1,5 +1,6 @@
 import 'package:animations/image_page.dart';
 import 'package:animations/notifier.dart';
+import 'package:animations/widgets/alert_wiggle.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,12 +22,14 @@ class _HomePageState extends State<HomePage> {
         height: 700,
         child: ListView.builder(
             physics: NeverScrollableScrollPhysics(),
-            itemCount: 10,
+            itemCount: 1,
             itemBuilder: (context, index){
-              return const ListTile(
-                leading: DownloadingProgress(),
-                title: Text("Hola"),
-                subtitle: Text("kapito sala"),
+              return const AlertWiggle(
+                child: const ListTile(
+                  leading: DownloadingProgress(),
+                  title: Text("Hola"),
+                  subtitle: Text("kapito sala"),
+                ),
               );
             }
         ),
